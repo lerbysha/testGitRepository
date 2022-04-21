@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+  <div align="center" style="padding-top:10px">
+        <p> Основной функцией анализатора RuLingva является выявление лингвистических параметров текста
+        </p>
+  </div>
+
+        <form action="/analisys" method='POST'>
+        <div class="form-floating">
+            <!-- <textarea placeholder="&#10 Введите текст в данное поле" -->
+            <textarea placeholder="Введите текст в данное поле"
+            style="
+                position: relative;left: 50%; transform: translate(-50%, 0);
+                width: 50%;
+                height:300px;
+                /* border: 5px; */
+                /* padding: 10px 5px; */
+                font-size: 16px;
+                "
+
+            name="TEXT"></textarea>
+         </div>
+
+        </br>
+
+        <div align="center" style="padding-top:10px">
+          <h5> Выберите анализатор:</h5>
+        </div>
+
+        <select style="
+        font-size: 16px;
+            /* font-family: sans-serif; */
+            position: relative;left: 50%; transform: translate(-50%, 0);
+            font-weight: 700;
+            color: #444;
+            line-height: 1.3;
+
+            width: 50%;
+            max-width: 50%;
+            box-sizing: border-box;
+            margin: 0;
+            border: 1px solid #aaa;
+            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+            border-radius: .5em;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #ffa"
+
+
+        size="2"  name="ENGINE">
+            <option  value="spacy">SpaCy</option>
+            <option  selected value="natasha">Natasha</option>
+           </select>
+        </br>
+        <!--  paramaset-->
+
+        <div align="center" style="padding-top:10px">
+          <h6> Набор для анализа:</h6>
+        </div>
+
+        <select style="
+        font-size: 14px;
+            /* font-family: sans-serif; */
+            position: relative;left: 50%; transform: translate(-50%, 0);
+            font-weight: 700;
+            color: #444;
+            line-height: 1.3;
+
+            width: 50%;
+            max-width: 50%;
+            box-sizing: border-box;
+            margin: 0;
+            border: 1px solid #aaa;
+            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+            border-radius: .5em;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #ffa"
+
+
+        size="2"  name="PARAMSET">
+            <option  selected value="full"><b>Полный</b></option>
+            <option  value="restricted">Только частотность</option>
+           </select>
+        </br>
+        </br>
+        </br>
+        <input type="submit"
+
+        style="
+
+            position: relative;left: 50%; transform: translate(-50%, 0);
+            width: 50%;
+            height:50px;
+            border: 1px;
+            background-color: #00A9A9;
+            color: white;
+            padding: 10px 5px;
+            font-size: 24px;
+            /* font-weight: 900; */
+            cursor: pointer;
+
+            text-align: center"
+
+        value="Отправить текст на анализ" />
+        </form>
+{% endblock %}
